@@ -12,17 +12,19 @@ class Formatter {
   };
 
   static titleize(string) {
-    let splitTitle = string.split(' ')
-    let title = split.Title.shift()
+    // Split up title by words
+    let splitTitle = string.split(' ');
+
+    // Capitalize first word
+    let title = splitTitle.shift()
     title = title[0].toUpperCase() + title.slice(1);
     let preps = ["the", "a", "an", "but", "of", "and", "for", "at", "by", "from"];
     splitTitle.forEach( word => {
       if ( !preps.includes(word) ) {
         word = word[0].toUpperCase() + word.slice(1);
       }
-      title += ` @{word}`;
+      title += ` ${word}`;
     })
     return title;
   }
-  //add static methods here
 };
